@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="logo">
+          <img src="https://www.gmoney.in/wp-content/uploads/2023/01/logo-02-1.svg" alt="">
+        </div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#" class="dropdown">Services</a>
+        <a href="#">Case Studies</a>
+        <a href="#">Policies</a>
+        <a href="#">About Us</a>
+      </div>
+
+      <button class="contact-btn" onclick="openPopup()">Contact Us</button>
+      <div id="popup" class="popup-overlay">
+        <div class="popup-box">
+          <h2>Contact Team</h2>
+          <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+      </div>
+
+      <!-- Popup CSS -->
+      <style>
+        .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.6);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+
+        .popup-box {
+          background: #fff;
+          padding: 30px 40px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-btn {
+          margin-top: 20px;
+          background-color: #1b3f8b;
+          color: white;
+          padding: 10px 16px;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+      </style>
+
+      <!-- Popup JS -->
+      <script>
+        function openPopup() {
+          document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+          document.getElementById("popup").style.display = "none";
+        }
+      </script>
+    </nav>
+
+    <!-- Drawer Menu for Mobile -->
+    <div class="drawer" id="drawer">
+      <a href="#">Services</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Policies</a>
+      <a href="#">About Us</a>
+    </div>
+
+    <div class="hero-carousel">
+      <div
+        class="slides active"
+        style="
+          background-image: url('https://img.freepik.com/premium-photo/hospital-corridor-hd-8k-wallpaper-stock-photographic-image_890746-134467.jpg?ga=GA1.1.330281747.1744284685&semt=ais_hybrid&w=740');
+        "
+      >
+     <div class="sliders">
+      <div class="overlay-text">
+        10,300+ Hospitals and Clinics in India trust GMoney Services
+      </div>
+      <p class="overlay">Join the GMoney network now</p>
+      <button class="contact-button" onclick="openPopup()">Contact Us</button>
+    </div>
+     </div>
+      <div
+        class="slides"
+        style="
+          background-image: url('https://img.freepik.com/free-photo/medicine-capsules-global-health-with-geometric-pattern-digital-remix_53876-126742.jpg?ga=GA1.1.330281747.1744284685&semt=ais_hybrid&w=740');
+        "
+      >
+        <div class="overlay-text">Discover Our Case Studies</div>
+      </div>
+      <div
+        class="slides"
+        style="
+          background-image: url('https://img.freepik.com/free-photo/high-angle-medical-desk-composition_23-2148502945.jpg?t=st=1744286167~exp=1744289767~hmac=58307ce15439ba4a8a623f7d5de1ff1b59710d6f38e88f6c2e1711c7cb809935&w=1380');
+        "
+      >
+        <div class="overlay-text">Policies That Work</div>
+      </div>
+      <div
+        class="slides"
+        style="
+          background-image: url('https://img.freepik.com/premium-photo/many-different-multicolored-pills-white-table-drops-nose-instructions-health-care_531064-3359.jpg?w=1380');
+        "
+      >
+        <div class="overlay-text">Learn More About Us</div>
+      </div>
+      <div
+        class="slides"
+        style="
+          background-image: url('https://img.freepik.com/free-photo/high-angle-arrangement-medical-objects-green-background_23-2148502969.jpg?t=st=1744286188~exp=1744289788~hmac=33bd452c0dda809d15dbb850a4de721a7894dd94a6ccb08725ed21e6b0c3a66b&w=1380');
+        "
+      >
+        <div class="overlay-text">Get in Touch Today</div>
+      </div>
+
+      <button class="prev" onclick="changeSlide(-1)">❮</button>
+      <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <section class="services-section">
+      <h2 class="section-title">GMoney Services</h2>
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <h3 class="card-title">
+            Advance Against Mediclaim (Non Empaneled Hospital)
+          </h3>
+          <p class="card-desc">
+            This product helps NEW and Non Empaneled hospitals to offer Near
+            Cashless experience to their patients. GMoney pays the bill in
+            advance as loan...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="icon">📑</div>
+          <h3 class="card-title">Medical Bills Payment in No Cost EMI</h3>
+          <p class="card-desc">
+            Using this product Health care service make quality healthcare
+            affordable for their patients. This product is very popular at IVF
+            centers, Dentists, Cosmetic clinics and ma...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="icon">👩‍⚕️</div>
+          <h3 class="card-title">IVF Optimiser</h3>
+          <p class="card-desc">
+            OPT IVF, a clinically tested and proven model that recommends
+            personalized dosage, reduces sides effects and improves Grade A
+            follicles during an IVF cycle...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3 class="card-title">Revenue Cycle Management</h3>
+          <p class="card-desc">
+            As the largest Revenue cycle managers of India, we solve some of the
+            real-life problems faced by large hospitals. We work as an integral
+            part of the hospital...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="icon">💰</div>
+          <h3 class="card-title">Receivable Finance</h3>
+          <p class="card-desc">
+            Receivables stuck up for months in credit schemes / mediclaims is
+            one of the major challenges faced by the healthcare industry
+            today...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <h3 class="card-title">Cashless Claim Assist</h3>
+          <p class="card-desc">
+            A single window for 50+ Insurance Companies and TPAs to manage from
+            Preauthorization, Tracking, Query Management, Final Approval and
+            Disbursal...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="icon">💉</div>
+          <h3 class="card-title">Consumable Supply (GMedz)</h3>
+          <p class="card-desc">
+            All large hospitals work on rate contracts and thus enjoy great
+            savings, assured supplies, longer credit periods without worrying
+            about price fluctuation...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+          <div class="icon">👩‍⚕️</div>
+          <span class="badge">For Patients</span>
+          <h3 class="card-title">Reimbursement Claim Assist</h3>
+          <p class="card-desc">
+            Hospitals can offer reimbursement claim support to their premium
+            clients and save them from the associated hassles...
+          </p>
+          <a href="#" class="read-more">(Read More)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="counter-section">
+      <h3>BE A PART OF GMONEY FAMILY</h3>
+      <h1>At GMoney We Make Quality Healthcare Affordable.</h1>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="counter" data-target="10000">0</span>+
+          <p>Hospitals / HSPs added</p>
+        </div>
+        <div class="stat">
+          <span class="counter" data-target="200">0</span>+
+          <p>Strong team across India</p>
+        </div>
+        <div class="stat">
+          <span class="counter" data-target="6">0</span>
+          <p>Offices PAN India</p>
+        </div>
+        <div class="stat">
+          <span class="counter" data-target="26">0</span>
+          <p>States covering 454 Cities</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p>Join Our Network Hospitals</p>
+        <button onclick="openPopup()">Contact Us</button>
+      </div>
+    </section>
+
+    <!-- Popup HTML -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-box">
+        <h2>Contact Team</h2>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Popup CSS -->
+    <style>
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .popup-box {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .close-btn {
+        margin-top: 20px;
+        background-color: #1b3f8b;
+        color: white;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+
+    <!-- Popup JS -->
+    <script>
+      function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+
+    <div class="case-study-card">
+      <h3 class="case-title">Case Study</h3>
+      <img
+        src="https://img.freepik.com/free-photo/portrait-smiling-young-doctors-standing-together-portrait-medical-staff-inside-modern-hospital-smiling-camera_657921-885.jpg?ga=GA1.1.330281747.1744284685&semt=ais_hybrid&w=740"
+        alt="Doctors"
+        class="case-image"
+      />
+
+      <div class="case-content">
+        <h4 class="case-highlight">
+          Revenue Increased 100% From<br />
+          2.5 Cr To 5 Cr Per Month.
+        </h4>
+        <p class="case-subtext">For a 200 bedded hospital of Trivandrum</p>
+
+        <button class="read-more-btn">Read More</button>
+      </div>
+
+      <div class="dot-indicator">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="testimonial-section">
+      <h2>Real-Life Stories From Our Customer</h2>
+
+      <div class="tabs">
+        <span class="tab active" data-tab="hospitals">HOSPITALS</span>
+        <span class="tab" data-tab="customers">CUSTOMERS</span>
+      </div>
+
+      <div class="carousel-container" id="carousel">
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="slide active">
+            <div class="card1">
+              <img
+                src="https://imgs.search.brave.com/XRsOEotlo6lnTu_odRnjEO1WEFPyuSYu6riwjzTOcO0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waG90/b3MuaGVhbHRoZ3Jh/ZGVzLmNvbS9pbWcv/c2lsaG91ZXR0ZXMv/c2lsaG91ZXR0ZS1t/YWxlX3cxMjBoMTYw/X3YxLmpwZz9uYW1l/PURyLiUyMFJhaml2/JTIwQWdnYXJ3YWws/JTIwTUQ"
+                alt="Dr. Rajeev"
+              />
+              <div class="info">
+                <strong>Dr. Rajeev Agrawal</strong><br />
+                KKasturi Medicare Pvt Ltd,<br />
+                Bhayander
+              </div>
+            </div>
+            <div class="quote">
+              <p class="highlight">
+                “EMI options and financing options are need of the hour.”
+              </p>
+              <p>
+                EMI options and financing options are need of the hour. It helps
+                patients to choose better and timely treatment. Happy that
+                Kamaljeet Kaur from GMoney is collaborating with our center to
+                provide patients with more financial flexibility.
+              </p>
+            </div>
+          </div>
+
+          <!-- Additional slides can go here -->
+        </div>
+
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Reach Us -->
+        <div class="footer-section">
+          <h2>Reach us</h2>
+          <p><strong>Mumbai HO</strong></p>
+          <p>GMoney Pvt. Ltd.</p>
+          <p>
+            315, 215 Atrium,<br />Next to Courtyard by Marriott,<br />A.K. Road,
+            Andheri East,<br />Mumbai - 400093
+          </p>
+          <p>Ph: +91 86570 00105, +91 72089 60444</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="footer-section">
+          <h2>Follow us</h2>
+          <div class="social-icons">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">IN</a>
+            <a href="#">YT</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Hospital Registration</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="footer-section">
+          <h2>Contact us</h2>
+          <p>info@gmoney.loans</p>
+
+          <div class="contact-block">
+            <p><strong>No Cost EMI & Advance Against Mediclaim</strong></p>
+            <p>+91 86570 00105<br />+91 72089 60444</p>
+          </div>
+
+          <div class="contact-block">
+            <p><strong>Medical Equipment Finance</strong></p>
+            <p>+91 93598 16238<br />+91 86570 00130</p>
+          </div>
+
+          <div class="contact-block">
+            <p><strong>Claim Desk & Insurance on EMIs</strong></p>
+            <p>+91 98673 95040</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Offices -->
+      <div class="regional-offices">
+        <h2>Regional Offices</h2>
+        <div class="offices-grid">
+          <div>
+            <p><strong>Bengaluru</strong></p>
+            <p>
+              GMoney Pvt. Ltd.<br />Oyo Work Spaces,<br />Umiya Emporium,<br />Koramangala,
+              Bengaluru,<br />Karnataka - 560029
+            </p>
+            <p>Ph: +91 89717 34815</p>
+          </div>
+          <div>
+            <p><strong>Pune</strong></p>
+            <p>
+              GMoney Pvt. Ltd.<br />91 Spring Board, Creaticity Mall,<br />Yerawada,
+              Pune, Maharashtra - 411006
+            </p>
+            <p>Ph: +91 84250 28758</p>
+          </div>
+          <div>
+            <p><strong>Delhi</strong></p>
+            <p>
+              GMoney Pvt. Ltd.<br />Berry Co Works,<br />Barakhambha Road,<br />New
+              Delhi - 110001
+            </p>
+            <p>Ph: +91 97116 26832, +91 80769 00775</p>
+          </div>
+          <div>
+            <p><strong>Chandigarh</strong></p>
+            <p>
+              GMoney Pvt. Ltd.<br />SCO No. 292, Sector 35D,<br />Chandigarh -
+              160022
+            </p>
+            <p>Ph: +91 84279 82012</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="city-network-section">
+      <h2>Find your city under GMoney network</h2>
+      <div class="city-list">
+        Pune Mumbai | New Delhi | Kolkata | Chennai| Navi Mumbai Bengaluru |
+        Ahmedabad | Nagpur Hyderabad | Jaipur | Lucks npur Amritsar Vasai Noida
+        Gurugram | Chandigarh | Ranchi | Cuttack | Thane | Kalyan Jalandhar |
+        Kolhapur Visakhapatnam | Chakan Greater Noida Wagholi | Raipur | Panvel
+        Belgaum | Mohali | Bhiwandi Talegaon Coimbatore | Palghar | Mumbra |
+        Sangli | Surat Durgapur | Ludhiana | Kochi | Agra | Ahmednagar | Ajmer |
+        Akola | Aurangabad | Baroda | Beed Rewari | Patiata | Vellore |
+        Ranjangaon Nanded Nellore Panipat | Panjim | Madurai | Mysore |
+        Mangalore | Korba | Mathura | Kalaburagi | Jalgaon | Kharar | Guwahati |
+        Kollam | Jamshedpur | Gwalior | Saswad | Solapur | Varanasi | Salem |
+        Sambalpur | Jodhpur Hubli | Panchkula Faridabad| Amravati | Ayodhya |
+        Badlapur | Dehradun | Parbhani | Ujjain | Udaipur Tiruchirappalli |
+        Srinagar | Shimla | Secunderabad | Ratnagiri | Pandharpur | Ananthapuram
+        Buldhana | Hadapsar | Baramati | Chittoor | Darjeeling | Dhule |
+        Fatehpur | Gandhinagar | Haridwar | Gorakhpur | Jhansi | Kanchipuram |
+        Kartarpur | Kurukshetra | Pondicherry | Prayagraj Bharuch Bhusawal |
+        Bathinda | Pathankot Nandurbar Niphad Kolar | Ambala | Kota | Pendurthi
+        | Jabalpur | Palwal | Bhilai | Bhiwani | Bilaspur | Patna | Rohtak |
+        Phagwara | Malegaon | Vijayawada Bikaner Chiplun | Darbhanga | Roorkee |
+        Bhor | Rajahmundry | Margao | Alwar | Dhanbad Bulandshahr | Aluva |
+        Mulshi | Davanagere | Kapurthala | Anantapur | Loni | Latur | Gondia |
+        Chhindwara Barrackpore | Ramgarh | Meerut Bassi | Dera Bassi | Howrah |
+        Karjat Raigarh | Thiruvananthapuram | Bheemunipatnam | Ambegoan
+        Allahabad | Aligarh | Alappuzha | Tirupathi | Thoppumpady | Chandrapur
+        Dharmapuri-TN | Faridkot | Dharwad Daund | Chaksu | Bareilly | Kakinada
+        | Haldwani | Doddaballapur | Dindori-MH | Bagru | Kudus | Kozhikode |
+        Gurdaspur Bokaro Berhampur | Batala Srikakulam | Siliguri | Rourkela |
+        Mirzapur | Gadag | Bellary | Tumkur | Sonipat | Hoshangabad | Junnar |
+        Jalna | Hisar | Karnal | Kottayam | Muzzafarnagar | Ramnagara | Thrissur
+        | Bahadurgarh | Balasore Baraut Dhar | Ernakulam | Gadhinglaj | Chikodi
+        Vaniyambadi Kamothe
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          2023 © GMoney Technologies Pvt. Ltd. | 2023 © GMoney Pvt. Ltd. All
+          Rights Reserved.
+        </div>
+        <div>
+          <a href="#">Terms and Conditions</a> |
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Grievance Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
